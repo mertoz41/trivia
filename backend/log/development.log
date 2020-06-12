@@ -1229,3 +1229,755 @@ Migrating to AddDifficultyToQuestions (20200612150648)
   [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 16:52:00.174318"], ["updated_at", "2020-06-12 16:52:00.174318"]]
   [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mCategory Load (4.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (3.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:23:02.947639"], ["updated_at", "2020-06-12 17:23:02.947639"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:23:02.978947"], ["updated_at", "2020-06-12 17:23:02.978947"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Books"], ["created_at", "2020-06-12 17:23:02.983628"], ["updated_at", "2020-06-12 17:23:02.983628"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:02.987155"], ["updated_at", "2020-06-12 17:23:02.987155"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:23:02.990704"], ["updated_at", "2020-06-12 17:23:02.990704"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:23:02.995082"], ["updated_at", "2020-06-12 17:23:02.995082"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:03.000185"], ["updated_at", "2020-06-12 17:23:03.000185"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:23:03.005100"], ["updated_at", "2020-06-12 17:23:03.005100"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:23:03.010132"], ["updated_at", "2020-06-12 17:23:03.010132"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:23:03.015037"], ["updated_at", "2020-06-12 17:23:03.015037"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:23:03.020279"], ["updated_at", "2020-06-12 17:23:03.020279"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:03.024740"], ["updated_at", "2020-06-12 17:23:03.024740"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:03.030024"], ["updated_at", "2020-06-12 17:23:03.030024"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vehicles"], ["created_at", "2020-06-12 17:23:03.034852"], ["updated_at", "2020-06-12 17:23:03.034852"]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Books"], ["created_at", "2020-06-12 17:23:03.046006"], ["updated_at", "2020-06-12 17:23:03.046006"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:23:03.053609"], ["updated_at", "2020-06-12 17:23:03.053609"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Computers"], ["created_at", "2020-06-12 17:23:03.060948"], ["updated_at", "2020-06-12 17:23:03.060948"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vehicles"], ["created_at", "2020-06-12 17:23:03.066963"], ["updated_at", "2020-06-12 17:23:03.066963"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:23:03.070675"], ["updated_at", "2020-06-12 17:23:03.070675"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:03.074572"], ["updated_at", "2020-06-12 17:23:03.074572"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:23:03.078263"], ["updated_at", "2020-06-12 17:23:03.078263"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:23:03.095311"], ["updated_at", "2020-06-12 17:23:03.095311"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:23:03.101797"], ["updated_at", "2020-06-12 17:23:03.101797"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:23:03.107889"], ["updated_at", "2020-06-12 17:23:03.107889"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:23:03.112817"], ["updated_at", "2020-06-12 17:23:03.112817"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:24:14.880634"], ["updated_at", "2020-06-12 17:24:14.880634"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Books"], ["created_at", "2020-06-12 17:24:14.907369"], ["updated_at", "2020-06-12 17:24:14.907369"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.911733"], ["updated_at", "2020-06-12 17:24:14.911733"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:14.917619"], ["updated_at", "2020-06-12 17:24:14.917619"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:24:14.923338"], ["updated_at", "2020-06-12 17:24:14.923338"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:24:14.929433"], ["updated_at", "2020-06-12 17:24:14.929433"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:14.934509"], ["updated_at", "2020-06-12 17:24:14.934509"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:24:14.938748"], ["updated_at", "2020-06-12 17:24:14.938748"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.943203"], ["updated_at", "2020-06-12 17:24:14.943203"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.947142"], ["updated_at", "2020-06-12 17:24:14.947142"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:14.952192"], ["updated_at", "2020-06-12 17:24:14.952192"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.956998"], ["updated_at", "2020-06-12 17:24:14.956998"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:24:14.962042"], ["updated_at", "2020-06-12 17:24:14.962042"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:24:14.966341"], ["updated_at", "2020-06-12 17:24:14.966341"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:24:14.970099"], ["updated_at", "2020-06-12 17:24:14.970099"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:24:14.974347"], ["updated_at", "2020-06-12 17:24:14.974347"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Politics"], ["created_at", "2020-06-12 17:24:14.979011"], ["updated_at", "2020-06-12 17:24:14.979011"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.983391"], ["updated_at", "2020-06-12 17:24:14.983391"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:24:14.988138"], ["updated_at", "2020-06-12 17:24:14.988138"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.992179"], ["updated_at", "2020-06-12 17:24:14.992179"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:14.995844"], ["updated_at", "2020-06-12 17:24:14.995844"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:15.012274"], ["updated_at", "2020-06-12 17:24:15.012274"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:15.016263"], ["updated_at", "2020-06-12 17:24:15.016263"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:24:15.021271"], ["updated_at", "2020-06-12 17:24:15.021271"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:15.027552"], ["updated_at", "2020-06-12 17:24:15.027552"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:24:30.778182"], ["updated_at", "2020-06-12 17:24:30.778182"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Books"], ["created_at", "2020-06-12 17:24:30.785332"], ["updated_at", "2020-06-12 17:24:30.785332"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.790385"], ["updated_at", "2020-06-12 17:24:30.790385"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:30.812644"], ["updated_at", "2020-06-12 17:24:30.812644"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:24:30.816537"], ["updated_at", "2020-06-12 17:24:30.816537"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:24:30.820079"], ["updated_at", "2020-06-12 17:24:30.820079"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:30.824017"], ["updated_at", "2020-06-12 17:24:30.824017"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:24:30.827420"], ["updated_at", "2020-06-12 17:24:30.827420"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.830496"], ["updated_at", "2020-06-12 17:24:30.830496"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.833633"], ["updated_at", "2020-06-12 17:24:30.833633"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:30.837059"], ["updated_at", "2020-06-12 17:24:30.837059"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.841266"], ["updated_at", "2020-06-12 17:24:30.841266"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:24:30.844305"], ["updated_at", "2020-06-12 17:24:30.844305"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:24:30.847474"], ["updated_at", "2020-06-12 17:24:30.847474"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:24:30.850515"], ["updated_at", "2020-06-12 17:24:30.850515"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:24:30.853625"], ["updated_at", "2020-06-12 17:24:30.853625"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Politics"], ["created_at", "2020-06-12 17:24:30.856865"], ["updated_at", "2020-06-12 17:24:30.856865"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.862871"], ["updated_at", "2020-06-12 17:24:30.862871"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:24:30.871774"], ["updated_at", "2020-06-12 17:24:30.871774"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.879945"], ["updated_at", "2020-06-12 17:24:30.879945"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.888163"], ["updated_at", "2020-06-12 17:24:30.888163"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.895333"], ["updated_at", "2020-06-12 17:24:30.895333"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:24:30.902036"], ["updated_at", "2020-06-12 17:24:30.902036"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:24:30.910534"], ["updated_at", "2020-06-12 17:24:30.910534"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:24:30.917297"], ["updated_at", "2020-06-12 17:24:30.917297"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:25:32.029123"], ["updated_at", "2020-06-12 17:25:32.029123"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:25:32.057025"], ["updated_at", "2020-06-12 17:25:32.057025"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:25:32.061577"], ["updated_at", "2020-06-12 17:25:32.061577"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:25:32.065955"], ["updated_at", "2020-06-12 17:25:32.065955"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:25:32.070449"], ["updated_at", "2020-06-12 17:25:32.070449"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Computers"], ["created_at", "2020-06-12 17:25:32.074392"], ["updated_at", "2020-06-12 17:25:32.074392"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:25:32.078634"], ["updated_at", "2020-06-12 17:25:32.078634"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:25:32.083854"], ["updated_at", "2020-06-12 17:25:32.083854"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:25:32.088240"], ["updated_at", "2020-06-12 17:25:32.088240"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Computers"], ["created_at", "2020-06-12 17:25:32.093038"], ["updated_at", "2020-06-12 17:25:32.093038"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:25:32.096770"], ["updated_at", "2020-06-12 17:25:32.096770"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:25:32.100824"], ["updated_at", "2020-06-12 17:25:32.100824"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:25:32.105594"], ["updated_at", "2020-06-12 17:25:32.105594"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:25:32.109789"], ["updated_at", "2020-06-12 17:25:32.109789"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:25:32.113457"], ["updated_at", "2020-06-12 17:25:32.113457"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:25:32.117377"], ["updated_at", "2020-06-12 17:25:32.117377"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Comics"], ["created_at", "2020-06-12 17:25:32.120848"], ["updated_at", "2020-06-12 17:25:32.120848"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:25:32.124397"], ["updated_at", "2020-06-12 17:25:32.124397"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:25:32.128906"], ["updated_at", "2020-06-12 17:25:32.128906"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Animals"], ["created_at", "2020-06-12 17:25:32.132514"], ["updated_at", "2020-06-12 17:25:32.132514"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:25:32.135952"], ["updated_at", "2020-06-12 17:25:32.135952"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science & Nature"], ["created_at", "2020-06-12 17:25:32.139922"], ["updated_at", "2020-06-12 17:25:32.139922"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:25:32.155438"], ["updated_at", "2020-06-12 17:25:32.155438"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:25:32.160622"], ["updated_at", "2020-06-12 17:25:32.160622"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:25:32.164974"], ["updated_at", "2020-06-12 17:25:32.164974"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateQuestions (20200612140935)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "questions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "category_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612140935"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateChoices (20200612141153)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "choices" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "correct" boolean, "question_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612141153"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCategories (20200612143249)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "difficulty" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612143249"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200612143754)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "high_score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612143754"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveDifficultyFromCategory (20200612150629)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acategories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "difficulty" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acategories" ("id","name","difficulty","created_at","updated_at")
+                     SELECT "id","name","difficulty","created_at","updated_at" FROM "categories"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("id","name","created_at","updated_at")
+                     SELECT "id","name","created_at","updated_at" FROM "acategories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acategories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612150629"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDifficultyToQuestions (20200612150648)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "questions" ADD "difficulty" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200612150648"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-12 17:27:14.544482"], ["updated_at", "2020-06-12 17:27:14.544482"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mythology"], ["created_at", "2020-06-12 17:27:24.187973"], ["updated_at", "2020-06-12 17:27:24.187973"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:27:24.211455"], ["updated_at", "2020-06-12 17:27:24.211455"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:27:24.215708"], ["updated_at", "2020-06-12 17:27:24.215708"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.219935"], ["updated_at", "2020-06-12 17:27:24.219935"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vehicles"], ["created_at", "2020-06-12 17:27:24.225178"], ["updated_at", "2020-06-12 17:27:24.225178"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:27:24.230184"], ["updated_at", "2020-06-12 17:27:24.230184"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:27:24.234551"], ["updated_at", "2020-06-12 17:27:24.234551"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.238982"], ["updated_at", "2020-06-12 17:27:24.238982"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:27:24.243354"], ["updated_at", "2020-06-12 17:27:24.243354"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.248314"], ["updated_at", "2020-06-12 17:27:24.248314"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:27:24.252502"], ["updated_at", "2020-06-12 17:27:24.252502"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.257846"], ["updated_at", "2020-06-12 17:27:24.257846"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:27:24.262299"], ["updated_at", "2020-06-12 17:27:24.262299"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.266226"], ["updated_at", "2020-06-12 17:27:24.266226"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.270105"], ["updated_at", "2020-06-12 17:27:24.270105"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Comics"], ["created_at", "2020-06-12 17:27:24.273713"], ["updated_at", "2020-06-12 17:27:24.273713"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Board Games"], ["created_at", "2020-06-12 17:27:24.277668"], ["updated_at", "2020-06-12 17:27:24.277668"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.281332"], ["updated_at", "2020-06-12 17:27:24.281332"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:27:24.284981"], ["updated_at", "2020-06-12 17:27:24.284981"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:27:24.288838"], ["updated_at", "2020-06-12 17:27:24.288838"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:27:24.292519"], ["updated_at", "2020-06-12 17:27:24.292519"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:24.308989"], ["updated_at", "2020-06-12 17:27:24.308989"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:27:24.313885"], ["updated_at", "2020-06-12 17:27:24.313885"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:27:24.319639"], ["updated_at", "2020-06-12 17:27:24.319639"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:27:24.325257"], ["updated_at", "2020-06-12 17:27:24.325257"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mythology"], ["created_at", "2020-06-12 17:27:32.769121"], ["updated_at", "2020-06-12 17:27:32.769121"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 17:27:32.776129"], ["updated_at", "2020-06-12 17:27:32.776129"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:27:32.794103"], ["updated_at", "2020-06-12 17:27:32.794103"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.797588"], ["updated_at", "2020-06-12 17:27:32.797588"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vehicles"], ["created_at", "2020-06-12 17:27:32.800471"], ["updated_at", "2020-06-12 17:27:32.800471"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:27:32.805750"], ["updated_at", "2020-06-12 17:27:32.805750"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 17:27:32.810566"], ["updated_at", "2020-06-12 17:27:32.810566"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.813868"], ["updated_at", "2020-06-12 17:27:32.813868"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Japanese Anime & Manga"], ["created_at", "2020-06-12 17:27:32.817490"], ["updated_at", "2020-06-12 17:27:32.817490"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.821793"], ["updated_at", "2020-06-12 17:27:32.821793"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:27:32.826843"], ["updated_at", "2020-06-12 17:27:32.826843"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.830505"], ["updated_at", "2020-06-12 17:27:32.830505"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:27:32.834068"], ["updated_at", "2020-06-12 17:27:32.834068"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.837642"], ["updated_at", "2020-06-12 17:27:32.837642"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.841196"], ["updated_at", "2020-06-12 17:27:32.841196"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Comics"], ["created_at", "2020-06-12 17:27:32.845409"], ["updated_at", "2020-06-12 17:27:32.845409"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Board Games"], ["created_at", "2020-06-12 17:27:32.848996"], ["updated_at", "2020-06-12 17:27:32.848996"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.852452"], ["updated_at", "2020-06-12 17:27:32.852452"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 17:27:32.856249"], ["updated_at", "2020-06-12 17:27:32.856249"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Cartoon & Animations"], ["created_at", "2020-06-12 17:27:32.859700"], ["updated_at", "2020-06-12 17:27:32.859700"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Film"], ["created_at", "2020-06-12 17:27:32.863496"], ["updated_at", "2020-06-12 17:27:32.863496"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 17:27:32.866683"], ["updated_at", "2020-06-12 17:27:32.866683"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 17:27:32.870895"], ["updated_at", "2020-06-12 17:27:32.870895"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 17:27:32.874257"], ["updated_at", "2020-06-12 17:27:32.874257"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 17:27:32.877356"], ["updated_at", "2020-06-12 17:27:32.877356"]]
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (byebug):1:in `block in <main>'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Mathematics"], ["created_at", "2020-06-12 19:22:25.735858"], ["updated_at", "2020-06-12 19:22:25.735858"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 19:22:25.782615"], ["updated_at", "2020-06-12 19:22:25.782615"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 19:22:25.787728"], ["updated_at", "2020-06-12 19:22:25.787728"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "General Knowledge"], ["created_at", "2020-06-12 19:22:25.794499"], ["updated_at", "2020-06-12 19:22:25.794499"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 19:22:25.799658"], ["updated_at", "2020-06-12 19:22:25.799658"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 19:22:25.806547"], ["updated_at", "2020-06-12 19:22:25.806547"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Computers"], ["created_at", "2020-06-12 19:22:25.812891"], ["updated_at", "2020-06-12 19:22:25.812891"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sports"], ["created_at", "2020-06-12 19:22:25.818130"], ["updated_at", "2020-06-12 19:22:25.818130"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 19:22:25.826323"], ["updated_at", "2020-06-12 19:22:25.826323"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Musicals & Theatres"], ["created_at", "2020-06-12 19:22:25.830584"], ["updated_at", "2020-06-12 19:22:25.830584"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Science: Computers"], ["created_at", "2020-06-12 19:22:25.835666"], ["updated_at", "2020-06-12 19:22:25.835666"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 19:22:25.842158"], ["updated_at", "2020-06-12 19:22:25.842158"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 19:22:25.846751"], ["updated_at", "2020-06-12 19:22:25.846751"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Geography"], ["created_at", "2020-06-12 19:22:25.850107"], ["updated_at", "2020-06-12 19:22:25.850107"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 19:22:25.853420"], ["updated_at", "2020-06-12 19:22:25.853420"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 19:22:25.860776"], ["updated_at", "2020-06-12 19:22:25.860776"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (2.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 19:22:25.868144"], ["updated_at", "2020-06-12 19:22:25.868144"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Music"], ["created_at", "2020-06-12 19:22:25.876316"], ["updated_at", "2020-06-12 19:22:25.876316"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 19:22:25.883717"], ["updated_at", "2020-06-12 19:22:25.883717"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Politics"], ["created_at", "2020-06-12 19:22:25.891043"], ["updated_at", "2020-06-12 19:22:25.891043"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 19:22:25.896392"], ["updated_at", "2020-06-12 19:22:25.896392"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 19:22:25.901451"], ["updated_at", "2020-06-12 19:22:25.901451"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "History"], ["created_at", "2020-06-12 19:22:25.924157"], ["updated_at", "2020-06-12 19:22:25.924157"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Television"], ["created_at", "2020-06-12 19:22:25.934293"], ["updated_at", "2020-06-12 19:22:25.934293"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entertainment: Video Games"], ["created_at", "2020-06-12 19:22:25.945095"], ["updated_at", "2020-06-12 19:22:25.945095"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m

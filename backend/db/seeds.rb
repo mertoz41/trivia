@@ -10,12 +10,18 @@ require 'rest-client'
 
 
 
-category = RestClient.get 'https://opentdb.com/api.php?amount=100&type=multiple'
-# category_array = JSON.parse(category)['trivia_categories']
-# category_names = category_array.map {|i| i['name']}
-# category_names.map {|i| Category.create(name: i)}
+trivia = RestClient.get 'https://opentdb.com/api.php?amount=25&type=multiple'
+trivia_array = JSON.parse(trivia)['results']
+category = trivia_array.map {|i| i['category']}
+category.map {|i| Category.create(name: i)}
 
-# question = ResClient.get ''
+question = trivia_array.map{|i| i['question']}
+
+
+
+correct_choices = trivia_array.map{|i| i['correct_answer']}
+incorrect_choices = trivia_array.map{|i| i['incorrect_answers']}
+byebug
 
 
 
