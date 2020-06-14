@@ -18,10 +18,13 @@ function fetchCategories(){
     fetch(category_url)
     .then(resp => resp.json())
     .then(data => {
-        data.forEach(category => {
-            
-            renderCategory(category)
+        
+        data.forEach(category => { 
+            renderCategory(category)   
         })
+        let select = document.getElementById('category-select')
+        select.addEventListener('change', postCategory)
+ 
     })
 }
 
@@ -34,14 +37,26 @@ function renderCategory(category){
     select.add(option)
     form.appendChild(select)
     form.hidden = false 
-    
-    
+    // select.addEventListener('change', postCategory)
+    // debugger
     
 }
 
-function postCategory(e, id){
-    console.log("Working")
-    debugger 
+function postCategory(e){
+    category_id = e.target.firstElementChild.id
+    fetch(`${category_url}/${category_id}`, {
+        method: 'GET', 
+        headers: {
+            'Content-Type': 'application/json', 
+            'Accepts': 'application/json'
+        }
+    })
+    .then(resp => resp.json())
+    .then(data => {
+        data.questions.forEach(question => {
+            renderDifficulty(question)
+        })  
+    })
 }
 
 function renderDifficulty(){
