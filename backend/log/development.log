@@ -5251,3 +5251,378 @@ Processing by CategoriesController#index as */*
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1921)
 
 
+Started GET "/categories" for ::1 at 2020-06-14 13:44:03 -0400
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 338ms (Views: 0.6ms | ActiveRecord: 5.3ms | Allocations: 6203)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:44:14 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1938)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:44:39 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1938)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:46:37 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1938)
+
+
+Started GET "/" for ::1 at 2020-06-14 13:47:07 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 100.8ms | Allocations: 480)
+Completed 200 OK in 240ms (Views: 160.9ms | ActiveRecord: 0.0ms | Allocations: 2628)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:47:13 -0400
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 81ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1919)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:48:39 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:49:07 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:49:24 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1938)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:49:47 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:56:27 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 1937)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 13:59:15 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:01:10 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:02:08 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:05:35 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:06:29 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:08:33 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.6ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:08:40 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:09:15 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:11:49 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1924)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:12:17 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:17:41 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:18:31 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:26:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 1937)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:27:44 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1921)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:32:14 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1921)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-14 14:41:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+Completed 200 OK in 249ms (Views: 6.2ms | ActiveRecord: 1.1ms | Allocations: 4512)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-14 14:42:15 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/saimaakhtar/Flatiron/code/Mod3/trivia/backend/app/controllers/categories_controller.rb:9: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/categories_controller.rb:9: syntax error, unexpected '\n', expecting =>
+app/controllers/categories_controller.rb:9: syntax error, unexpected '\n', expecting =>
+Started GET "/favicon.ico" for ::1 at 2020-06-14 14:42:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categories/1" for ::1 at 2020-06-14 14:42:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 3.2ms | Allocations: 6722)
+
+
+  
+NoMethodError (undefined method `question' for #<Category:0x00007f974d46c530>
+Did you mean?  questions
+               questions=):
+  
+app/controllers/categories_controller.rb:9:in `show'
+Started GET "/categories/1" for ::1 at 2020-06-14 14:43:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (14.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 430ms (Views: 164.9ms | ActiveRecord: 37.7ms | Allocations: 16927)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:45:07 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 96ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 5630)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:45:28 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 1921)
+
+
+Started POST "/categories/1" for ::1 at 2020-06-14 14:45:29 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/categories/1"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categories" for ::1 at 2020-06-14 14:46:33 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 5595)
+
+
+Started POST "/categories/1" for ::1 at 2020-06-14 14:46:35 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/categories/1"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categories" for ::1 at 2020-06-14 14:47:19 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 171ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 5627)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:48:33 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1921)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-14 14:48:35 -0400
+Processing by CategoriesController#show as */*
+  Parameters: {"id"=>"1", "category"=>{}}
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 131ms (Views: 116.5ms | ActiveRecord: 5.3ms | Allocations: 9408)
+
+
+Started GET "/categories" for ::1 at 2020-06-14 14:56:05 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1937)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-14 14:56:07 -0400
+Processing by CategoriesController#show as */*
+  Parameters: {"id"=>"1", "category"=>{}}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (12.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 25ms (Views: 8.1ms | ActiveRecord: 12.5ms | Allocations: 2742)
+
+
