@@ -13,7 +13,9 @@ class QuestionsController < ApplicationController
         questions = Question.q_by_category(params[:category_id], params[:difficulty])
         # byebug
          # some method that returns questions based on params category_Id and difficulty
-        render json: questions
+        render json: questions.to_json(
+            include: :choices
+        )
     end
 
 end
