@@ -65516,3 +65516,100 @@ Completed 200 OK in 321ms (Views: 0.2ms | ActiveRecord: 87.5ms | Allocations: 10
   [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["category_id", 1], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Started GET "/categories/" for ::1 at 2020-06-15 12:10:47 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (undefined local variable or method `user_shops' for main:Object):
+  
+app/controllers/categories_controller.rb:13:in `<main>'
+Started GET "/categories/" for ::1 at 2020-06-15 12:11:04 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 108ms (Views: 0.1ms | ActiveRecord: 4.9ms | Allocations: 6264)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-15 12:11:30 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 297ms (Views: 161.2ms | ActiveRecord: 16.6ms | Allocations: 11939)
+
+
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (3.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ? LIMIT ?[0m  [["category_id", 1], ["difficulty", "easy"], ["LIMIT", 11]]
+Started GET "/questions" for ::1 at 2020-06-15 12:40:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (1.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 156ms (Views: 101.6ms | ActiveRecord: 1.4ms | Allocations: 9461)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-15 12:40:38 -0400
+Processing by QuestionsController#by_category_and_difficulty as HTML
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ? LIMIT ?[0m  [["category_id", 1], ["difficulty", "easy"], ["LIMIT", 11]]
+  ↳ app/controllers/questions_controller.rb:11:in `by_category_and_difficulty'
+Completed 500 Internal Server Error in 55691ms (ActiveRecord: 0.4ms | Allocations: 50952)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `by_category_and_difficulty'
+app/controllers/questions_controller.rb:11:in `by_category_and_difficulty'
+Started GET "/questions/1/easy" for ::1 at 2020-06-15 12:41:57 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#by_category_and_difficulty as HTML
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:11:in `by_category_and_difficulty'
+Completed 200 OK in 222ms (Views: 148.6ms | ActiveRecord: 3.5ms | Allocations: 7701)
+
+
+Started GET "/questions/1/medium" for ::1 at 2020-06-15 12:42:11 -0400
+Processing by QuestionsController#by_category_and_difficulty as HTML
+  Parameters: {"category_id"=>"1", "difficulty"=>"medium"}
+  [1m[36mQuestion Load (3.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "medium"]]
+  ↳ app/controllers/questions_controller.rb:11:in `by_category_and_difficulty'
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 3.2ms | Allocations: 1193)
+
+
+Started GET "/questions/1/hard" for ::1 at 2020-06-15 12:42:17 -0400
+Processing by QuestionsController#by_category_and_difficulty as HTML
+  Parameters: {"category_id"=>"1", "difficulty"=>"hard"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "hard"]]
+  ↳ app/controllers/questions_controller.rb:11:in `by_category_and_difficulty'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 1199)
+
+

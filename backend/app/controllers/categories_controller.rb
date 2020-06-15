@@ -10,4 +10,3 @@ class CategoriesController < ApplicationController
     end
 end
 
-render json: user_shops.to_json(methods: :fav_number)

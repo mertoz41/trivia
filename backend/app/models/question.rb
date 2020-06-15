@@ -2,10 +2,9 @@ class Question < ApplicationRecord
     has_many :choices
     belongs_to :category
 
-    # def diff_by_category
-    #     self.category.difficulty
-
-    # end
+    def self.q_by_category(category_id, difficulty)
+        self.all.where(category_id: category_id, difficulty: difficulty)
+    end
    
 
 end
