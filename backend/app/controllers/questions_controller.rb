@@ -4,8 +4,14 @@ class QuestionsController < ApplicationController
         render json: questions
     end 
 
-    def by_category_and_difficulty
-        questions = # some method that returns questions based on params category_Id and difficulty
+    # def by_category_and_difficulty
+    #     questions = # some method that returns questions based on params category_Id and difficulty
         
-    end
+    # end
+
+    # def show
+    #     category = Category.find(params[:id])
+    #     question = Question.find(params[:id])
+    #     render json: 
+    # end
 end

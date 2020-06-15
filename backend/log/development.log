@@ -65406,3 +65406,113 @@ Processing by CategoriesController#show as */*
 Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1944)
 
 
+Started GET "/categories" for ::1 at 2020-06-15 11:25:09 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 383ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 6129)
+
+
+Started GET "/categories" for ::1 at 2020-06-15 11:25:12 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1938)
+
+
+Started GET "/categories/7" for ::1 at 2020-06-15 11:25:15 -0400
+Processing by CategoriesController#show as */*
+  Parameters: {"id"=>"7", "category"=>{}}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (2.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 7]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 202ms (Views: 188.4ms | ActiveRecord: 8.3ms | Allocations: 9584)
+
+
+Started GET "/categories/9" for ::1 at 2020-06-15 11:25:41 -0400
+Processing by CategoriesController#show as */*
+  Parameters: {"id"=>"9", "category"=>{}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 9]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 28ms (Views: 20.4ms | ActiveRecord: 0.5ms | Allocations: 1797)
+
+
+Started GET "/" for ::1 at 2020-06-15 11:29:48 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 67.2ms | Allocations: 315)
+Completed 200 OK in 178ms (Views: 94.9ms | ActiveRecord: 0.0ms | Allocations: 1754)
+
+
+Started GET "/questions" for ::1 at 2020-06-15 11:29:52 -0400
+  
+SyntaxError (/Users/saimaakhtar/Flatiron/code/Mod3/trivia/backend/app/controllers/questions_controller.rb:10: syntax error, unexpected end
+    end
+    ^~~):
+  
+app/controllers/questions_controller.rb:10: syntax error, unexpected end
+app/controllers/questions_controller.rb:10: syntax error, unexpected end
+Started GET "/questions" for ::1 at 2020-06-15 11:30:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/controllers/questions_controller.rb:4:in `index'
+Completed 200 OK in 188ms (Views: 174.4ms | ActiveRecord: 2.0ms | Allocations: 9911)
+
+
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mQuestion Load (2.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (1.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (3.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (2.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/categories/1" for ::1 at 2020-06-15 11:49:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+Completed 500 Internal Server Error in 440ms (ActiveRecord: 11.6ms | Allocations: 41000)
+
+
+  
+NoMethodError (undefined method `category' for #<CategoriesController:0x00007fc48e3643e0>
+Did you mean?  category_url):
+  
+app/controllers/categories_controller.rb:9:in `show'
+Started GET "/categories/1" for ::1 at 2020-06-15 11:49:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (7.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/models/category.rb:5:in `map'
+Completed 200 OK in 321ms (Views: 0.2ms | ActiveRecord: 87.5ms | Allocations: 10443)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
