@@ -4,6 +4,11 @@ class QuestionsController < ApplicationController
         render json: questions
     end 
 
+    # def show
+    #     question = Question.q_by_category(params[:category_id], params[:difficulty])
+    #     render json: question
+    # end 
+
     def by_category_and_difficulty
         questions = Question.q_by_category(params[:category_id], params[:difficulty])
         # byebug
