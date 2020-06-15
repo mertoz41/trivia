@@ -45,7 +45,7 @@ function renderForms(e){
     // debugger 
     forms.addEventListener('submit', getQuestions)
 }
-
+let globalQuestions 
 function getQuestions(e){
     e.preventDefault()
     console.log("working")
@@ -53,19 +53,46 @@ function getQuestions(e){
     let difficulty = document.querySelector('#difficulty-select').value
     fetch(`${question_url}/${category_id}/${difficulty}`)
     .then(resp => resp.json())
-    .then(questions => {
-        questions.forEach(question => {
-            renderQuestions(question)
-        })
+    .then(questions => { 
+        globalQuestions = questions
+        renderQuestions(questions[0])
+    })
+        
+        // questions.forEach(question => {
+        //     renderQuestions(question)
+        //     debugger 
+            
+    
         // questions.forEach(question =>{
         //     renderQuestions(question)
         // })
-    })
+    
     document.getElementById('forms').hidden = true
 }
 
 function renderQuestions(question){
-    console.log(question)
+    let container = document.getElementById('questions-container')
+    let quest = document.createElement('div')
+    let oneQuestion = document.createElement('p')
+    oneQuestion.innerText = question.text
+    quest.appendChild(oneQuestion)
+    question.choices.forEach(choice => {
+        let button = document.createElement('button')
+        button.innerText = choice.text
+        quest.append(button)
+
+    })
+    let submitButton = document.createElement('button')
+    submitButton.innerText = "Submit"
+    // submitButton.addEventListener('click', )
+    let passButton = document.createElement('button')
+    passButton.innerText = "Pass"
+
+    // passButton.addEventListener('click',)
+    quest.append(submitButton, passButton)
+
+    container.appendChild(quest)
+    
 }
 
 
