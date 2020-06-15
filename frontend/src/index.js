@@ -31,13 +31,15 @@ function fetchCategories(){
 }
 
 function renderCategory(category){
-    let select = document.getElementById('category-select')
-    let form = document.getElementById('category-form')
-    let option = document.createElement('option')
-    option.value = category.id
-    option.text = category.name
-    select.add(option)
-    form.appendChild(select)
+    let category_select = document.getElementById('category-select')
+    let form = document.getElementById('forms')
+    let category_option = document.createElement('option')
+    category_option.value = category.id
+    category_option.text = category.name
+    category_select.add(category_option)
+
+    let difficulty_select = document.getElementById('difficulty_select')
+    form.append(category_select, difficulty_select)
     form.hidden = false 
     // select.addEventListener('change', postCategory)
     // debugger
@@ -57,24 +59,23 @@ function getCategory(e){
     .then(data => {
          
         data.questions.forEach(questions => {
-             renderDifficulty(questions)
+             renderDifficulty()
         })  
     })
 }
 
-function renderDifficulty(questions){
-    console.log(questions)
+function renderDifficulty(e){
+    form = document.getElementById('difficulty-form')
+    form.hidden = false
     
+    form.addEventListener('change', renderQuestions)
+   
     
-    let form = document.getElementById('difficulty-form')
-    form.hidden = false 
-    let select = document.getElementById('difficulty-select')
-    let option = document.createElement('option')
-    
-    option.text = questions.difficulty
-    select.add(option)
-    form.appendChild(select)
-    
+}
+
+function renderQuestions(e) {
+
+
 }
 
 
