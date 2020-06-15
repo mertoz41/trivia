@@ -1,5 +1,5 @@
 const category_url = 'http://localhost:3000/categories'
-
+const question_url = 'http://localhost:3000/questions'
 document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('login-form').addEventListener('submit', handleLogin)
 })
@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function(){
 function handleLogin(e){
     e.preventDefault()
     document.getElementById('login-form').hidden = true
-
     fetchCategories()
 }
 
@@ -19,15 +18,12 @@ function fetchCategories(){
     fetch(category_url)
     .then(resp => resp.json())
     .then(data => {
-        
         data.forEach(category => { 
             renderCategory(category) 
-            
         })
         
     })
-    let select = document.getElementById('category-select')
-    select.addEventListener('change', getCategory)
+    renderForms()
 }
 
 function renderCategory(category){
@@ -37,46 +33,42 @@ function renderCategory(category){
     category_option.value = category.id
     category_option.text = category.name
     category_select.add(category_option)
-
-    let difficulty_select = document.getElementById('difficulty_select')
-    form.append(category_select, difficulty_select)
-    form.hidden = false 
-    // select.addEventListener('change', postCategory)
-    // debugger
-    
 }
 
-function getCategory(e){
-    category_id = parseInt(e.target.value)
-    fetch(`${category_url}/${category_id}`, {
-        method: 'GET', 
-        headers: {
-            'Content-Type': 'application/json', 
-            'Accepts': 'application/json'
-        }
-    })
+function renderForms(e){
+    let forms = document.getElementById('forms')
+    forms.hidden = false 
+    let selectCategory = document.getElementById('category-select')
+    let selectDifficulty = document.getElementById('difficulty-select')
+    // selectCategory.addEventListener('change')
+    // selectDifficulty.addEventListener('change')
+    // debugger 
+    forms.addEventListener('submit', getQuestions)
+}
+
+function getQuestions(e){
+    e.preventDefault()
+    console.log("working")
+    let category_id = parseInt(document.querySelector("#category-select").value)
+    let difficulty = document.querySelector('#difficulty-select').value
+    fetch(`${question_url}/${category_id}/${difficulty}`)
     .then(resp => resp.json())
-    .then(data => {
-         
-        data.questions.forEach(questions => {
-             renderDifficulty()
-        })  
+    .then(questions => {
+        questions.forEach(question => {
+            renderQuestions(question)
+        })
+        // questions.forEach(question =>{
+        //     renderQuestions(question)
+        // })
     })
+    document.getElementById('forms').hidden = true
 }
 
-function renderDifficulty(e){
-    form = document.getElementById('difficulty-form')
-    form.hidden = false
-    
-    form.addEventListener('change', renderQuestions)
-   
-    
+function renderQuestions(question){
+    console.log(question)
 }
 
-function renderQuestions(e) {
 
-
-}
 
 
 
