@@ -9,8 +9,9 @@ function handleLogin(e){
     document.getElementById('login-form').hidden = true
 
     fetchCategories()
-    renderDifficulty()
 }
+
+
 
 
 function fetchCategories(){
@@ -20,19 +21,20 @@ function fetchCategories(){
     .then(data => {
         
         data.forEach(category => { 
-            renderCategory(category)   
+            renderCategory(category) 
+            
         })
-        let select = document.getElementById('category-select')
-        select.addEventListener('change', postCategory)
- 
+        
     })
+    let select = document.getElementById('category-select')
+    select.addEventListener('change', getCategory)
 }
 
 function renderCategory(category){
     let select = document.getElementById('category-select')
     let form = document.getElementById('category-form')
     let option = document.createElement('option')
-    option.id = category.id
+    option.value = category.id
     option.text = category.name
     select.add(option)
     form.appendChild(select)
@@ -42,8 +44,8 @@ function renderCategory(category){
     
 }
 
-function postCategory(e){
-    category_id = e.target.firstElementChild.id
+function getCategory(e){
+    category_id = parseInt(e.target.value)
     fetch(`${category_url}/${category_id}`, {
         method: 'GET', 
         headers: {
@@ -53,14 +55,26 @@ function postCategory(e){
     })
     .then(resp => resp.json())
     .then(data => {
-        data.questions.forEach(question => {
-            renderDifficulty(question)
+         
+        data.questions.forEach(questions => {
+             renderDifficulty(questions)
         })  
     })
 }
 
-function renderDifficulty(){
+function renderDifficulty(questions){
+    console.log(questions)
+    
+    
     let form = document.getElementById('difficulty-form')
+    form.hidden = false 
+    let select = document.getElementById('difficulty-select')
+    let option = document.createElement('option')
+    
+    option.text = questions.difficulty
+    select.add(option)
+    form.appendChild(select)
+    
 }
 
 
