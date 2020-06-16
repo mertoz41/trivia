@@ -41,14 +41,11 @@ function renderForms(e){
     forms.hidden = false 
     let selectCategory = document.getElementById('category-select')
     let selectDifficulty = document.getElementById('difficulty-select')
-    // selectCategory.addEventListener('change')
-    // selectDifficulty.addEventListener('change')
-    // debugger 
     forms.addEventListener('submit', getQuestions)
 }
 
 let globalQuestions 
-let questionCounter = 0
+let questionCounter 
 function getQuestions(e){
     e.preventDefault()
     let category_id = parseInt(document.querySelector("#category-select").value)
@@ -57,6 +54,7 @@ function getQuestions(e){
     .then(resp => resp.json())
     .then(questions => { 
         globalQuestions = questions
+        questionCounter = 0
         renderQuestions(globalQuestions[0])
     })
     
@@ -101,7 +99,7 @@ function renderQuestions(question){
 }
 
 
-let currentChoice
+let currentChoice = 'unchosen'
 function userChoice(e) {
     if (e.target.value == 'true') {
         currentChoice = true
@@ -115,9 +113,6 @@ function userChoice(e) {
 let userPoints = 0
 function handleSubmit(e) {
 
-    // if(e.target.value = nil) {
-    //     alert('You must choose an answer or pass')
-    // }
     if (currentChoice === true) {
         userPoints++
     } else {
@@ -128,6 +123,7 @@ function handleSubmit(e) {
     while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
+       
         nextQuestion()
 
     }
@@ -151,7 +147,10 @@ function handleSubmit(e) {
         text.innerText = `Your score is ${userPoints}`
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
-        // returnButton.addEventListener('click', fetchCategories)
+        returnButton.addEventListener('click', function () {
+            endGameDiv.remove()
+            fetchCategories()
+        })
 
         endGameDiv.append(text, returnButton)
         container.appendChild(endGameDiv)
@@ -167,9 +166,9 @@ function handleSubmit(e) {
             questContainer.firstElementChild.remove()
         }
         
-        // if(firstChoice) {
-        //     alert('Your answer won\'t count')
-        // }
+        if(currentChoice != 'unchosen') {
+           alert('Your answer won\'t count')
+         }
         nextQuestion()
     }
 
