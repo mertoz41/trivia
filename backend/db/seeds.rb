@@ -14,18 +14,47 @@ Question.destroy_all
 Choice.destroy_all
 
 
-trivia = RestClient.get 'https://opentdb.com/api.php?amount=25&type=multiple'
-trivia_array = JSON.parse(trivia)['results']
+urls = [ 'https://opentdb.com/api.php?amount=50&category=21&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=9&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=10&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=11&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=12&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=14&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=15&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=16&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=17&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=18&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=13&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=19&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=22&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=23&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=24&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=25&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=26&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=27&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=28&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=32&type=multiple']
 
-trivia_array.each do |question_hash|
+
     
-    category = Category.find_or_create_by(name: question_hash["category"])
-    question = Question.create(text: question_hash["question"], category_id: category.id, difficulty: question_hash["difficulty"])
-    correct_choice = Choice.create(text: question_hash["correct_answer"], question_id: question.id, correct: true)
-    question_hash['incorrect_answers'].each do |answer|
-        incorrect_choice = Choice.create(text: answer, question_id: question.id, correct: false)
+    
+    def create_questions(url)
+        trivia = RestClient.get url
+        trivia_array = JSON.parse(trivia)['results']
+        trivia_array.each do |question_hash|
+            category = Category.find_or_create_by(name: question_hash["category"])
+            question = Question.create(text: question_hash["question"], category_id: category.id, difficulty: question_hash["difficulty"])
+            correct_choice = Choice.create(text: question_hash["correct_answer"], question_id: question.id, correct: true)
+            question_hash['incorrect_answers'].each do |answer|
+                incorrect_choice = Choice.create(text: answer, question_id: question.id, correct: false)
+            end
+        end
     end
-end
+    
+    
+    urls.each do |url| 
+        create_questions(url)
+    end 
 
 
 
