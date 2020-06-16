@@ -14,6 +14,7 @@ function handleLogin(e){
 
 
 function fetchCategories(){
+    
     let form = document.getElementById('category-form')
     fetch(category_url)
     .then(resp => resp.json())
@@ -21,7 +22,7 @@ function fetchCategories(){
         data.forEach(category => { 
             renderCategory(category) 
         })
-        
+       
     })
     renderForms()
 }
@@ -47,6 +48,7 @@ function renderForms(e){
 }
 
 let globalQuestions 
+let questionCounter = 0
 function getQuestions(e){
     e.preventDefault()
     let category_id = parseInt(document.querySelector("#category-select").value)
@@ -76,7 +78,7 @@ function renderQuestions(question){
         questDiv.append(choiceButton)
         //would be listening for the boolean true or false 
         //passes to the submit function (if true, then) (if false)
-        choiceButton.addEventListener('click', pointSystem)
+        choiceButton.addEventListener('click', userChoice)
         
     })
     let submitButton = document.createElement('button')
@@ -86,6 +88,7 @@ function renderQuestions(question){
     let passButton = document.createElement('button')
     passButton.innerText = "Pass"
     passButton.value = 'pass'
+    passButton.addEventListener('click', handlePass)
 
     questDiv.append(submitButton, passButton)
 
@@ -97,24 +100,77 @@ function renderQuestions(question){
     
 }
 
-let userPoints = 0
-function pointSystem(e) {
-    if (e.target.value === "true") {
-        userPoints++
+
+let currentChoice
+function userChoice(e) {
+    if (e.target.value == 'true') {
+        currentChoice = true
     } else {
-        userPoints--
+        currentChoice = false
     }
     let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
     submitButton.addEventListener('click', handleSubmit)
 }
 
+let userPoints = 0
 function handleSubmit(e) {
-    debugger
+
+    // if(e.target.value = nil) {
+    //     alert('You must choose an answer or pass')
+    // }
+    if (currentChoice === true) {
+        userPoints++
+    } else {
+        userPoints--
+    }
+
     let questContainer = document.querySelector("#questions-container")
     while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
-        for(let i = 1; i <= globalQuestions.length; i++) {
-        renderQuestions(globalQuestions[i]) 
+        nextQuestion()
+
     }
-}
+    
+    
+    function nextQuestion(e) {
+        questionCounter = questionCounter + 1
+        if (questionCounter === globalQuestions.length) {
+            endOfGame()
+        } else {
+            renderQuestions(globalQuestions[questionCounter]) 
+        }
+    }
+
+    function endOfGame(e) {
+        let container = document.getElementById('all-pages')
+        let endGameDiv = document.createElement('div')
+        endGameDiv.id = 'game-result'
+        endGameDiv.innerText = 'You\'ve reached the end of this game!'
+        let text = document.createElement('p')
+        text.innerText = `Your score is ${userPoints}`
+        let returnButton = document.createElement('button')
+        returnButton.innerText = 'Return to Start'
+        // returnButton.addEventListener('click', fetchCategories)
+
+        endGameDiv.append(text, returnButton)
+        container.appendChild(endGameDiv)
+        // console.log('the end')
+
+
+    }
+
+    function handlePass(e) {
+        let firstChoice = document.querySelector("#questions-container > div > p").nextSibling
+        let questContainer = document.querySelector("#questions-container")
+        while(questContainer.firstElementChild) {
+            questContainer.firstElementChild.remove()
+        }
+        
+        // if(firstChoice) {
+        //     alert('Your answer won\'t count')
+        // }
+        nextQuestion()
+    }
+
+    
