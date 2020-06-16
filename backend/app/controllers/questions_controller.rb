@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
         # byebug
          # some method that returns questions based on params category_Id and difficulty
         render json: questions.to_json(
-            include: :choices
+            :methods => :shuffle
         )
     end
 
