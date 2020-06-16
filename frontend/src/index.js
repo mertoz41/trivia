@@ -65,12 +65,12 @@ function renderQuestions(question){
     let questContainer = document.getElementById('questions-container')
     let questDiv = document.createElement('div')
     let oneQuestion = document.createElement('p')
-    oneQuestion.innerText = question.text
+    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
     questDiv.appendChild(oneQuestion)
     
     question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
-        choiceButton.innerText = choice.text
+        choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
         choiceButton.value = choice.correct
         choiceButton.id = choice.id
         questDiv.append(choiceButton)
@@ -111,10 +111,12 @@ function userChoice(e) {
 }
 
 let userPoints = 0
+let correctAnswers = 0
 function handleSubmit(e) {
 
     if (currentChoice === true) {
         userPoints++
+        correctAnswers++
     } else {
         userPoints--
     }
@@ -144,6 +146,8 @@ function handleSubmit(e) {
         endGameDiv.id = 'game-result'
         endGameDiv.innerText = 'You\'ve reached the end of this game!'
         let text = document.createElement('p')
+        let desc = document.createElement('p')
+        desc.innerText = `You answered ${correctAnswers} out of ${globalQuestions.length} correctly.`
         text.innerText = `Your score is ${userPoints}`
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
@@ -152,7 +156,7 @@ function handleSubmit(e) {
             renderForms()
         })
 
-        endGameDiv.append(text, returnButton)
+        endGameDiv.append(text, desc, returnButton)
         container.appendChild(endGameDiv)
         // console.log('the end')
 
