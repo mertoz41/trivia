@@ -14,7 +14,7 @@ function handleLogin(e){
 
 
 function fetchCategories(){
-    
+
     let form = document.getElementById('category-form')
     fetch(category_url)
     .then(resp => resp.json())
@@ -68,7 +68,7 @@ function renderQuestions(question){
     oneQuestion.innerText = question.text
     questDiv.appendChild(oneQuestion)
     
-    question.choices.forEach(choice => {
+    question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
         choiceButton.innerText = choice.text
         choiceButton.value = choice.correct
@@ -149,7 +149,7 @@ function handleSubmit(e) {
         returnButton.innerText = 'Return to Start'
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
-            fetchCategories()
+            renderForms()
         })
 
         endGameDiv.append(text, returnButton)
