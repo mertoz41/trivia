@@ -45,57 +45,76 @@ function renderForms(e){
     // debugger 
     forms.addEventListener('submit', getQuestions)
 }
+
 let globalQuestions 
 function getQuestions(e){
     e.preventDefault()
-    console.log("working")
     let category_id = parseInt(document.querySelector("#category-select").value)
     let difficulty = document.querySelector('#difficulty-select').value
     fetch(`${question_url}/${category_id}/${difficulty}`)
     .then(resp => resp.json())
     .then(questions => { 
         globalQuestions = questions
-        renderQuestions(questions[0])
+        renderQuestions(globalQuestions[0])
     })
-        
-        // questions.forEach(question => {
-        //     renderQuestions(question)
-        //     debugger 
-            
-    
-        // questions.forEach(question =>{
-        //     renderQuestions(question)
-        // })
     
     document.getElementById('forms').hidden = true
 }
 
 function renderQuestions(question){
-    let container = document.getElementById('questions-container')
-    let quest = document.createElement('div')
+    let questContainer = document.getElementById('questions-container')
+    let questDiv = document.createElement('div')
     let oneQuestion = document.createElement('p')
     oneQuestion.innerText = question.text
-    quest.appendChild(oneQuestion)
+    questDiv.appendChild(oneQuestion)
+    
     question.choices.forEach(choice => {
-        let button = document.createElement('button')
-        button.innerText = choice.text
-        quest.append(button)
-
+        let choiceButton = document.createElement('button')
+        choiceButton.innerText = choice.text
+        choiceButton.value = choice.correct
+        choiceButton.id = choice.id
+        questDiv.append(choiceButton)
+        //would be listening for the boolean true or false 
+        //passes to the submit function (if true, then) (if false)
+        choiceButton.addEventListener('click', pointSystem)
+        
     })
     let submitButton = document.createElement('button')
+    submitButton.value = 'submit'
     submitButton.innerText = "Submit"
-    // submitButton.addEventListener('click', )
+   
     let passButton = document.createElement('button')
     passButton.innerText = "Pass"
+    passButton.value = 'pass'
 
-    // passButton.addEventListener('click',)
-    quest.append(submitButton, passButton)
+    questDiv.append(submitButton, passButton)
 
-    container.appendChild(quest)
+    questContainer.appendChild(questDiv)
+    //if choice.correct == true
+    //submit + 1 to the leader board else -1 a and go to the next question
+    //go to the next question
+    //(alert: you must choose an answer)
     
 }
 
+let userPoints = 0
+function pointSystem(e) {
+    if (e.target.value === "true") {
+        userPoints++
+    } else {
+        userPoints--
+    }
+    let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
+    submitButton.addEventListener('click', handleSubmit)
+}
 
-
-
-
+function handleSubmit(e) {
+    debugger
+    let questContainer = document.querySelector("#questions-container")
+    while(questContainer.firstElementChild) {
+            questContainer.firstElementChild.remove()
+        }
+        for(let i = 1; i <= globalQuestions.length; i++) {
+        renderQuestions(globalQuestions[i]) 
+    }
+}
