@@ -66894,3 +66894,635 @@ Processing by QuestionsController#by_category_and_difficulty as */*
 Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 5338)
 
 
+Started GET "/" for ::1 at 2020-06-16 09:33:33 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/saimaakhtar/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 77.9ms | Allocations: 315)
+Completed 200 OK in 109ms (Views: 87.2ms | ActiveRecord: 0.0ms | Allocations: 1597)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:33:41 -0400
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (4.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 133ms (Views: 0.9ms | ActiveRecord: 50.2ms | Allocations: 6133)
+
+
+Started GET "/categories/1" for ::1 at 2020-06-16 09:33:56 -0400
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:8:in `show'
+  [1m[36mQuestion Load (16.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:9:in `show'
+Completed 200 OK in 307ms (Views: 263.3ms | ActiveRecord: 17.4ms | Allocations: 11956)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:38:37 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1939)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:38:47 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (4.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 159ms (Views: 0.2ms | ActiveRecord: 8.4ms | Allocations: 10088)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:42:10 -0400
+Processing by QuestionsController#by_category_and_difficulty as HTML
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 43ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 5336)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:57:43 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (23.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 234ms (Views: 0.9ms | ActiveRecord: 23.3ms | Allocations: 1937)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:57:45 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.7ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (7.9ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 316ms (Views: 0.1ms | ActiveRecord: 11.2ms | Allocations: 5375)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:57:49 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1938)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:57:50 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 35ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:58:31 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:58:32 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 99ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 09:59:02 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 09:59:03 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:00:52 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:00:53 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (5.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:09:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 22ms (Views: 3.0ms | ActiveRecord: 1.3ms | Allocations: 1937)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:09:36 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (5.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 132ms (Views: 0.2ms | ActiveRecord: 7.0ms | Allocations: 5372)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:09:55 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:09:56 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:17:07 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 83ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 1940)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:17:08 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 5372)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:19:59 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:20:00 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 23ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:20:19 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:20:20 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:20:50 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:20:51 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:21:07 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:21:08 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.7ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 42ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:22:54 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:22:55 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.8ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:33:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1937)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:33:54 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 5372)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:34:28 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1924)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:34:29 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.6ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:35:28 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:35:29 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (2.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:36:50 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:36:52 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:37:55 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:37:56 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (2.6ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 3.0ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:40:35 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:40:37 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.9ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:42:19 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:42:20 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.4ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:46:07 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:46:08 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:50:44 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 124ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1925)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:50:45 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 35ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:52:38 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:52:39 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.5ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 96ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:54:48 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:54:49 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:55:21 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:55:22 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.6ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:57:24 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:57:25 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.1ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.7ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (1.6ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 5338)
+
+
+Started GET "/categories" for ::1 at 2020-06-16 10:59:32 -0400
+Processing by CategoriesController#index as */*
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/categories_controller.rb:3:in `index'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1921)
+
+
+Started GET "/questions/1/easy" for ::1 at 2020-06-16 10:59:33 -0400
+Processing by QuestionsController#by_category_and_difficulty as */*
+  Parameters: {"category_id"=>"1", "difficulty"=>"easy"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."category_id" = ? AND "questions"."difficulty" = ?[0m  [["category_id", 1], ["difficulty", "easy"]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.3ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 51]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 61]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+  [1m[36mChoice Load (0.2ms)[0m  [1m[34mSELECT "choices".* FROM "choices" WHERE "choices"."question_id" = ?[0m  [["question_id", 75]]
+  ↳ app/controllers/questions_controller.rb:16:in `by_category_and_difficulty'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 5338)
+
+
