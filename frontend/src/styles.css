@@ -1,18 +1,17 @@
 body {
     background-color:#EBEBEB;
 }
-.heading {
+#heading {
     background-color: #084d68b4;
-    margin-bottom: 20px;
-    padding: 25px 30px ;
+    margin-bottom: 15px;
+    padding: 20px 20px ;
 }
 .left {
  align-content: initial;
 }
-.title {
+
+#title {
     color: #EBEBEB;
-    text-align: center;
-    font-size: x-large;
 }
 .button_buffer {
     padding-top: 50px;
