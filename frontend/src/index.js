@@ -100,11 +100,13 @@ function renderQuestions(question){
 
 
 let currentChoice = 'unchosen'
+let wrongAnswers = []
 function userChoice(e) {
     if (e.target.value == 'true') {
         currentChoice = true
     } else {
         currentChoice = false
+        wrongAnswers.push(document.querySelector("#questions-container > div > p"))
     }
     let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
     submitButton.addEventListener('click', handleSubmit)
@@ -151,6 +153,20 @@ function handleSubmit(e) {
         text.innerText = `Your score is ${userPoints}`
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
+
+        let submitNameButton = document.createElement('button')
+        submitNameButton.innerText = "Submit your score"
+        submitNameButton.addEventListener('click', addScore)
+
+        let wrongQuestionText = document.createElement('p')
+        let wrongQuestionsList = document.createElement('ul')
+        wrongAnswers.forEach(question => {
+            let li = document.createElement('li')
+            li.innerText = question.innerText
+            wrongQuestionsList.appendChild(li)
+        })
+        wrongQuestionText.innerText = "Questions you have answered wrong:"
+
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
             userPoints = 0
@@ -158,12 +174,81 @@ function handleSubmit(e) {
             renderForms()
         })
 
-        endGameDiv.append(text, desc, returnButton)
+        endGameDiv.append(text, desc, wrongQuestionText, wrongQuestionsList, submitNameButton, returnButton)
         container.appendChild(endGameDiv)
-        // console.log('the end')
-
-
     }
+
+    function addScore() {
+        document.getElementById('game-result').hidden = true
+        let allPages = document.getElementById('all-pages') 
+        let scoreBoardDiv = document.createElement('div')
+        scoreBoardDiv.id = "user-score"
+        let leaderboard = document.createElement('p')
+        leaderboard.innerText = "Submit your score to the leaderboard:"
+        let numbersForm = document.createElement('form')
+        numbersForm.id = "number-form"
+        let input = document.createElement('input')
+        let submit = document.createElement('input')
+        submit.type = "submit"
+        submit.innerText = "Submit"
+        input.type = "text"
+        input.name = "name"
+        input.placeholder = "Your Name"
+        numbersForm.append(input, submit)
+        scoreBoardDiv.append(leaderboard, numbersForm)
+        allPages.appendChild(scoreBoardDiv)
+        numbersForm.addEventListener('submit', postUserScore)
+        renderLeaderBoard()
+    }
+
+    function renderLeaderBoard(){
+        let userDiv = document.getElementById('user-score')
+        let board = document.createElement('div')
+        let statement = document.createElement('p')
+        statement.innerText = "Leaderboard:"
+        let returnButton = document.createElement('button')
+        returnButton.innerText = "Return to Start"
+        let ul = document.createElement('ul')
+        fetch('http://localhost:3000/users')
+        .then(resp => resp.json())
+        .then(data => {
+            data.forEach(user => {
+                let li = document.createElement('li')
+                li.innerText = `${user.name}- ${user.high_score}`
+                ul.appendChild(li)
+            })
+        })
+        returnButton.addEventListener('click', function(){
+            document.getElementById('game-result').remove()
+            document.getElementById('user-score').remove()
+            renderForms()
+        })
+        board.append(statement, ul, returnButton)
+        userDiv.appendChild(board)
+    }
+
+    function postUserScore(e){
+        e.preventDefault()
+        let user = e.target.firstElementChild.value
+        fetch('http://localhost:3000/users', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: user,
+                high_score: userPoints
+            })
+        })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        let user_score = document.getElementById('user-score')
+        while(user_score.firstElementChild){
+            user_score.firstElementChild.remove()
+        }
+        renderLeaderBoard()
+    }
+
 
     function handlePass(e) {
         let firstChoice = document.querySelector("#questions-container > div > p").nextSibling
