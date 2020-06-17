@@ -1,0 +1,25 @@
+body {
+    background-color:#EBEBEB;
+}
+.heading {
+    background-color: #084d68b4;
+    margin-bottom: 20px;
+    padding: 25px 30px ;
+}
+.left {
+ align-content: initial;
+}
+.title {
+    color: #EBEBEB;
+    text-align: center;
+    font-size: x-large;
+}
+.button_buffer {
+    padding-top: 50px;
+}
+.container_buffer {
+    padding-top: 60px;
+}
+.buffer_below {
+    padding-bottom: 30px;
+}

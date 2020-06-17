@@ -64,7 +64,9 @@ function renderQuestions(question){
     let questContainer = document.getElementById('questions-container')
     let questDiv = document.createElement('div')
     let oneQuestion = document.createElement('p')
+    oneQuestion.className = 'buffer_below'
     let tracker = document.createElement('div')
+    tracker.className = 'buffer_below'
     let startQ = questionCounter + 1
     let lengthQ = globalQuestions.length
     tracker.innerText = `Question ${startQ} out of ${lengthQ}`
@@ -73,25 +75,34 @@ function renderQuestions(question){
     
     question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
+        let br = document.createElement('br')
+        choiceButton.className = 'ui toggle button'
         choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
         choiceButton.value = choice.correct
         choiceButton.id = choice.id
-        questDiv.append(choiceButton)
+        questDiv.append(choiceButton, br)
         //would be listening for the boolean true or false 
         //passes to the submit function (if true, then) (if false)
         choiceButton.addEventListener('click', userChoice)
-        
     })
+    let divSubPass = document.createElement('div')
+    divSubPass.className = 'ui buttons button_buffer'
+    let divOr = document.createElement('div')
+    divOr.className = 'or'
     let submitButton = document.createElement('button')
     submitButton.value = 'submit'
     submitButton.innerText = "Submit"
-   
+    submitButton.className = 'ui positive button'
+    let br = document.createElement('br')
     let passButton = document.createElement('button')
     passButton.innerText = "Pass"
     passButton.value = 'pass'
+    passButton.className = 'ui button'
     passButton.addEventListener('click', handlePass)
 
-    questDiv.append(submitButton, passButton)
+    divSubPass.append(passButton, divOr, submitButton)
+
+    questDiv.append(br, divSubPass)
 
     questContainer.appendChild(questDiv)
     //if choice.correct == true
@@ -112,7 +123,7 @@ function userChoice(e) {
         question_title = document.querySelector("#questions-container > div > p:nth-child(2)")
         wrongQuestions.push(question_title.innerText)
     }
-    let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
+    let submitButton = document.querySelector("#questions-container > div > div.ui.buttons.button_buffer > button.ui.positive.button")
     submitButton.addEventListener('click', handleSubmit)
 }
 
@@ -164,6 +175,7 @@ function handleSubmit(e) {
         submitNameButton.addEventListener('click', addScore)
         
         let wrongQuestionsList = document.createElement('ul')
+        
         wrongQuestions.forEach(question => {
             // debugger
             let li = document.createElement('li')
@@ -259,16 +271,17 @@ function handleSubmit(e) {
 
     
     function handlePass(e) {
-        let passed = e.target.parentElement.querySelector('p')
-       
-        let questContainer = document.querySelector("#questions-container")
+        let passed = e.target.parentElement.parentElement.querySelector('p')
         wrongQuestions.push(passed.innerText)
+        
+       debugger 
+        let questContainer = document.querySelector("#questions-container")
         while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
         
         if(currentChoice !== 'unchosen' ) {
-           alert('Your answer won\'t count')
+            alert('Your answer won\'t count')
          } 
         currentChoice = 'unchosen'
         
