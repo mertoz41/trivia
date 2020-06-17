@@ -80,7 +80,7 @@ function renderQuestions(question){
         choiceButton.className = 'ui toggle button'
         choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
         choiceButton.value = choice.correct
-        choiceButton.id = choice.id
+        choiceButton.id = "choice-button"
         questDiv.append(choiceButton, br)
         //would be listening for the boolean true or false 
         //passes to the submit function (if true, then) (if false)
@@ -164,11 +164,19 @@ function handleSubmit(e) {
         let container = document.getElementById('all-pages')
         let endGameDiv = document.createElement('div')
         endGameDiv.id = 'game-result'
-        endGameDiv.innerText = 'You\'ve reached the end of this game!'
+        let uReachedTheEnd = document.createElement('p')
+        uReachedTheEnd.innerText = 'You\'ve reached the end of this game!'
+        uReachedTheEnd.className = "questions_font"
+        
+        
         let text = document.createElement('p')
         let desc = document.createElement('p')
         desc.innerText = `You answered ${correctAnswers} out of ${globalQuestions.length} correctly.`
+        desc.className = "questions_font"
         text.innerText = `Your score is ${userPoints}`
+        text.className = "questions_font"
+        text.style.color = "red"
+        
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
         returnButton.className = "ui black basic button"
@@ -183,12 +191,14 @@ function handleSubmit(e) {
         wrongQuestions.forEach(question => {
             // debugger
             let li = document.createElement('li')
+            let br = document.createElement('br')
             li.innerText = question
            
-            wrongQuestionsList.appendChild(li)
+            wrongQuestionsList.append(li,br)
         })
         let wrongQuestionText = document.createElement('p')
         wrongQuestionText.innerText = "These are the questions you answered incorrectly or passed on:"
+        wrongQuestionText.className = "questions_font"
 
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
@@ -198,7 +208,7 @@ function handleSubmit(e) {
             renderForms()
         })
 
-        endGameDiv.append(text, desc, wrongQuestionText, wrongQuestionsList, submitNameButton, returnButton)
+        endGameDiv.append(uReachedTheEnd, text, desc, wrongQuestionText, wrongQuestionsList, submitNameButton, returnButton)
         container.appendChild(endGameDiv)
     }
 
@@ -209,12 +219,15 @@ function handleSubmit(e) {
         scoreBoardDiv.id = "user-score"
         let leaderboard = document.createElement('p')
         leaderboard.innerText = "Submit your score to the leaderboard:"
+        leaderboard.className = 'questions_font'
         let numbersForm = document.createElement('form')
+        numbersForm.className = 'ui form'
         numbersForm.id = "number-form"
         let input = document.createElement('input')
         let submit = document.createElement('input')
         submit.type = "submit"
         submit.innerText = "Submit"
+        submit.className = "ui black basic button"
         input.type = "text"
         input.name = "name"
         input.placeholder = "Your Name"
@@ -230,15 +243,17 @@ function handleSubmit(e) {
         let board = document.createElement('div')
         let statement = document.createElement('p')
         statement.innerText = "Leaderboard:"
+        statement.className = 'questions_font container_buffer'
         let returnButton = document.createElement('button')
         returnButton.innerText = "Return to Start"
-        let ul = document.createElement('ul')
+        returnButton.className = "ui black basic button"
+        let ul = document.createElement('ol')
         fetch('http://localhost:3000/users')
         .then(resp => resp.json())
         .then(data => {
             data.forEach(user => {
                 let li = document.createElement('li')
-                li.innerText = `${user.name}- ${user.high_score}`
+                li.innerText = `${user.name}: ${user.high_score}`
                 ul.appendChild(li)
             })
         })
@@ -278,7 +293,7 @@ function handleSubmit(e) {
         let passed = e.target.parentElement.parentElement.querySelector('p')
         wrongQuestions.push(passed.innerText)
         
-        debugger 
+         
         let questContainer = document.querySelector("#questions-container")
         while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
