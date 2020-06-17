@@ -81,15 +81,15 @@ function renderQuestions(question){
     let startQ = questionCounter + 1
     let lengthQ = globalQuestions.length
     tracker.innerText = `Question ${startQ} out of ${lengthQ}`
-    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
-    oneQuestion.className = 'questions_font'
+    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&')
+    oneQuestion.className = 'questions_font buffer_below_question'
     questDiv.append(tracker, oneQuestion)
     
     question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
         let br = document.createElement('br')
         choiceButton.className = 'ui toggle button'
-        choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
+        choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&')
         choiceButton.value = choice.correct
         choiceButton.id = "choice-button"
         questDiv.append(choiceButton, br)
@@ -186,7 +186,7 @@ function handleSubmit(e) {
         desc.className = "questions_font"
         text.innerText = `Your score is ${userPoints}`
         text.className = "questions_font"
-        text.style.color = "red"
+        text.style.color = "rgb(131, 11, 11)"
         
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
@@ -197,19 +197,24 @@ function handleSubmit(e) {
         submitNameButton.className = "ui black basic button"
         submitNameButton.addEventListener('click', addScore)
         
-        let wrongQuestionsList = document.createElement('ul')
+        let wrongQuestionsList = document.createElement('div')
+        wrongQuestionsList.className = 'ui divided list'
+        
         
         wrongQuestions.forEach(question => {
             // debugger
-            let li = document.createElement('li')
             let br = document.createElement('br')
-            li.innerText = question
-           
-            wrongQuestionsList.append(li,br)
+            let questionDiv = document.createElement('div')
+            let icon = document.createElement('i')
+            icon.className = 'help icon'
+            questionDiv.className = 'item'
+            questionDiv.innerText = question
+
+            wrongQuestionsList.append(icon, questionDiv, br)
         })
         let wrongQuestionText = document.createElement('p')
-        wrongQuestionText.innerText = "The questions you answered incorrectly or passed are:"
-        wrongQuestionText.className = "questions_font"
+        wrongQuestionText.innerText = "Questions you answered incorrectly or passed:"
+        wrongQuestionText.className = "questions_font buffer_below_question"
 
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
@@ -239,6 +244,7 @@ function handleSubmit(e) {
         submit.type = "submit"
         submit.innerText = "Submit"
         submit.className = "ui black basic button"
+        input.id = 'input_padding'
         input.type = "text"
         input.name = "name"
         input.placeholder = "Your Name"
@@ -254,18 +260,20 @@ function handleSubmit(e) {
         let board = document.createElement('div')
         let statement = document.createElement('p')
         statement.innerText = "Leaderboard:"
-        statement.className = 'questions_font container_buffer'
+        statement.className = 'questions_font leader_top_buffer'
         let returnButton = document.createElement('button')
         returnButton.innerText = "Return to Start"
-        returnButton.className = "ui black basic button"
-        let ul = document.createElement('ol')
+        returnButton.className = "ui black basic button button_buffer"
+        let divList = document.createElement('div')
+        divList.className = 'ui ordered divided list'
         fetch('http://localhost:3000/users')
         .then(resp => resp.json())
         .then(data => {
             data.forEach(user => {
-                let li = document.createElement('li')
-                li.innerText = `${user.name}: ${user.high_score}`
-                ul.appendChild(li)
+                let item = document.createElement('div')
+                item.className = 'item left'
+                item.innerText = `${user.name}:  ${user.high_score} points`
+                divList.appendChild(item)
             })
         })
         returnButton.addEventListener('click', function(){
@@ -276,7 +284,7 @@ function handleSubmit(e) {
             wrongQuestions = []
             renderForms()
         })
-        board.append(statement, ul, returnButton)
+        board.append(statement, divList, returnButton)
         userDiv.appendChild(board)
     }
 
@@ -294,8 +302,9 @@ function handleSubmit(e) {
             })
         })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => renderLeaderBoard())
         let user_score = document.getElementById('user-score')
+
         while(user_score.firstElementChild){
             user_score.firstElementChild.remove()
         }

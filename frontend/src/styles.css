@@ -7,7 +7,7 @@ body {
     padding: 20px 20px ;
 }
 .left {
- align-content: initial;
+text-align: left;
 }
 
 #trivia_title {
@@ -19,21 +19,35 @@ body {
 }
 
 .button_buffer {
-    padding-top: 50px;
+    padding-top: 10px;
 }
 .container_buffer {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 .buffer_below {
-    padding-bottom: 30px;
+    padding-bottom: 25px;
 }
 .questions_font {
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
 }
 #choice-button {
     margin-bottom: 10px;
 }
-#font-color{
-    color: red;
+
+.buffer_below_question {
+    padding-bottom: 12px;
+}
+
+/* #leader_list {
+    position: relative;
+    left: -10px;
+  } */
+
+#input_padding {
+    margin-bottom: 10px;
+}
+  
+.leader_top_buffer {
+    padding-top: 50px;
 }
