@@ -10,9 +10,14 @@ body {
  align-content: initial;
 }
 
-#title {
+#trivia_title {
     color: #EBEBEB;
 }
+
+#leader_title {
+    color: #EBEBEB;
+}
+
 .button_buffer {
     padding-top: 50px;
 }

@@ -1,8 +1,19 @@
 const category_url = 'http://localhost:3000/categories'
 const question_url = 'http://localhost:3000/questions'
 document.addEventListener('DOMContentLoaded', function(){
-    // document.getElementById('login-form').addEventListener('submit', handleLogin
+    let triviaLink = document.getElementById('trivia_title')
+    let leaderBoardLink = document.getElementById('leader_title')
+    triviaLink.addEventListener('click', function() {
+        document.querySelector("#questions-container").firstElementChild.remove()
+        userPoints = 0
+        correctAnswers = 0
+        wrongQuestions = []
+        renderForms()
+    })
+
+    leaderBoardLink.addEventListener('click', renderLeaderBoard)
     fetchCategories()
+
 })
 
 function handleLogin(e){
@@ -197,7 +208,7 @@ function handleSubmit(e) {
             wrongQuestionsList.append(li,br)
         })
         let wrongQuestionText = document.createElement('p')
-        wrongQuestionText.innerText = "These are the questions you answered incorrectly or passed on:"
+        wrongQuestionText.innerText = "The questions you answered incorrectly or passed are:"
         wrongQuestionText.className = "questions_font"
 
         returnButton.addEventListener('click', function () {
@@ -260,6 +271,9 @@ function handleSubmit(e) {
         returnButton.addEventListener('click', function(){
             document.getElementById('game-result').remove()
             document.getElementById('user-score').remove()
+            userPoints = 0
+            correctAnswers = 0
+            wrongQuestions = []
             renderForms()
         })
         board.append(statement, ul, returnButton)
