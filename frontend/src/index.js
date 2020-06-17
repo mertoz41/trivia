@@ -1,7 +1,8 @@
 const category_url = 'http://localhost:3000/categories'
 const question_url = 'http://localhost:3000/questions'
 document.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('login-form').addEventListener('submit', handleLogin)
+    // document.getElementById('login-form').addEventListener('submit', handleLogin
+    fetchCategories()
 })
 
 function handleLogin(e){
@@ -39,8 +40,6 @@ function renderCategory(category){
 function renderForms(e){
     let forms = document.getElementById('forms')
     forms.hidden = false 
-    let selectCategory = document.getElementById('category-select')
-    let selectDifficulty = document.getElementById('difficulty-select')
     forms.addEventListener('submit', getQuestions)
 }
 
@@ -171,6 +170,7 @@ function handleSubmit(e) {
             endGameDiv.remove()
             userPoints = 0
             correctAnswers = 0
+            wrongQuestions = []
             renderForms()
         })
 
