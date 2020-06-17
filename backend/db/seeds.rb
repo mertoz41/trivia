@@ -14,10 +14,10 @@ Question.destroy_all
 Choice.destroy_all
 
 
-urls = [ 'https://opentdb.com/api.php?amount=50&category=21&type=multiple',
+urls = [ 'https://opentdb.com/api.php?amount=50&category=11&type=multiple',
+    'https://opentdb.com/api.php?amount=50&category=21&type=multiple',
     'https://opentdb.com/api.php?amount=50&category=9&type=multiple',
     'https://opentdb.com/api.php?amount=50&category=10&type=multiple',
-    'https://opentdb.com/api.php?amount=50&category=11&type=multiple',
     'https://opentdb.com/api.php?amount=50&category=12&type=multiple',
     'https://opentdb.com/api.php?amount=50&category=14&type=multiple',
     'https://opentdb.com/api.php?amount=50&category=15&type=multiple',
