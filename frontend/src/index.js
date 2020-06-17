@@ -64,8 +64,12 @@ function renderQuestions(question){
     let questContainer = document.getElementById('questions-container')
     let questDiv = document.createElement('div')
     let oneQuestion = document.createElement('p')
+    let tracker = document.createElement('div')
+    let startQ = questionCounter + 1
+    let lengthQ = globalQuestions.length
+    tracker.innerText = `Question ${startQ} out of ${lengthQ}`
     oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
-    questDiv.appendChild(oneQuestion)
+    questDiv.append(tracker, oneQuestion)
     
     question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
@@ -105,7 +109,8 @@ function userChoice(e) {
         currentChoice = true
     } else {
         currentChoice = false
-        wrongQuestions.push(document.querySelector("#questions-container > div > p"))
+        question_title = document.querySelector("#questions-container > div > p:nth-child(2)")
+        wrongQuestions.push(question_title.innerText)
     }
     let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
     submitButton.addEventListener('click', handleSubmit)
@@ -142,6 +147,7 @@ function handleSubmit(e) {
     }
 
     function endOfGame(e) {
+    
         let container = document.getElementById('all-pages')
         let endGameDiv = document.createElement('div')
         endGameDiv.id = 'game-result'
@@ -156,15 +162,17 @@ function handleSubmit(e) {
         let submitNameButton = document.createElement('button')
         submitNameButton.innerText = "Submit your score"
         submitNameButton.addEventListener('click', addScore)
-
-        let wrongQuestionText = document.createElement('p')
+        
         let wrongQuestionsList = document.createElement('ul')
         wrongQuestions.forEach(question => {
+            // debugger
             let li = document.createElement('li')
-            li.innerText = question.innerText
+            li.innerText = question
+           
             wrongQuestionsList.appendChild(li)
         })
-        wrongQuestionText.innerText = "These are the questions you incorrectly answered or passed on:"
+        let wrongQuestionText = document.createElement('p')
+        wrongQuestionText.innerText = "These are the questions you answered incorrectly or passed on:"
 
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
@@ -252,8 +260,9 @@ function handleSubmit(e) {
     
     function handlePass(e) {
         let passed = e.target.parentElement.querySelector('p')
+       
         let questContainer = document.querySelector("#questions-container")
-        wrongQuestions.push(passed)
+        wrongQuestions.push(passed.innerText)
         while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
