@@ -100,13 +100,13 @@ function renderQuestions(question){
 
 
 let currentChoice = 'unchosen'
-let wrongAnswers = []
+let wrongQuestions = []
 function userChoice(e) {
     if (e.target.value == 'true') {
         currentChoice = true
     } else {
         currentChoice = false
-        wrongAnswers.push(document.querySelector("#questions-container > div > p"))
+        wrongQuestions.push(document.querySelector("#questions-container > div > p"))
     }
     let submitButton = document.querySelector("#questions-container > div > button:nth-child(6)")
     submitButton.addEventListener('click', handleSubmit)
@@ -160,12 +160,12 @@ function handleSubmit(e) {
 
         let wrongQuestionText = document.createElement('p')
         let wrongQuestionsList = document.createElement('ul')
-        wrongAnswers.forEach(question => {
+        wrongQuestions.forEach(question => {
             let li = document.createElement('li')
             li.innerText = question.innerText
             wrongQuestionsList.appendChild(li)
         })
-        wrongQuestionText.innerText = "Questions you have answered wrong:"
+        wrongQuestionText.innerText = "These are the questions you incorrectly answered or passed on:"
 
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
@@ -249,10 +249,11 @@ function handleSubmit(e) {
         renderLeaderBoard()
     }
 
-
+    
     function handlePass(e) {
-        let firstChoice = document.querySelector("#questions-container > div > p").nextSibling
+        let passed = e.target.parentElement.querySelector('p')
         let questContainer = document.querySelector("#questions-container")
+        wrongQuestions.push(passed)
         while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
