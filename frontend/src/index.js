@@ -71,6 +71,7 @@ function renderQuestions(question){
     let lengthQ = globalQuestions.length
     tracker.innerText = `Question ${startQ} out of ${lengthQ}`
     oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
+    oneQuestion.className = 'questions_font'
     questDiv.append(tracker, oneQuestion)
     
     question.shuffle.forEach(choice => {
@@ -120,8 +121,7 @@ function userChoice(e) {
         currentChoice = true
     } else {
         currentChoice = false
-        question_title = document.querySelector("#questions-container > div > p:nth-child(2)")
-        wrongQuestions.push(question_title.innerText)
+        
     }
     let submitButton = document.querySelector("#questions-container > div > div.ui.buttons.button_buffer > button.ui.positive.button")
     submitButton.addEventListener('click', handleSubmit)
@@ -130,12 +130,14 @@ function userChoice(e) {
 let userPoints = 0
 let correctAnswers = 0
 function handleSubmit(e) {
-
+    question_title = document.querySelector("#questions-container > div > p:nth-child(2)")
+    
     if (currentChoice === true) {
         userPoints++
         correctAnswers++
     } else {
         userPoints--
+        wrongQuestions.push(question_title.innerText)
     }
 
     let questContainer = document.querySelector("#questions-container")
@@ -169,9 +171,11 @@ function handleSubmit(e) {
         text.innerText = `Your score is ${userPoints}`
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
+        returnButton.className = "ui black basic button"
 
         let submitNameButton = document.createElement('button')
-        submitNameButton.innerText = "Submit your score"
+        submitNameButton.innerText = "Submit Your Score"
+        submitNameButton.className = "ui black basic button"
         submitNameButton.addEventListener('click', addScore)
         
         let wrongQuestionsList = document.createElement('ul')
@@ -274,7 +278,7 @@ function handleSubmit(e) {
         let passed = e.target.parentElement.parentElement.querySelector('p')
         wrongQuestions.push(passed.innerText)
         
-       debugger 
+        debugger 
         let questContainer = document.querySelector("#questions-container")
         while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()

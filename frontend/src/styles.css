@@ -23,3 +23,7 @@ body {
 .buffer_below {
     padding-bottom: 30px;
 }
+.questions_font {
+    font-size: large;
+    font-weight: bold;
+}
