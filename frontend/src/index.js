@@ -234,7 +234,7 @@ function handleSubmit(e) {
         let scoreBoardDiv = document.createElement('div')
         scoreBoardDiv.id = "user-score"
         let leaderboard = document.createElement('p')
-        leaderboard.innerText = "Submit your score to the leaderboard:"
+        leaderboard.innerText = "Add your name to the leaderboard:"
         leaderboard.className = 'questions_font'
         let numbersForm = document.createElement('form')
         numbersForm.className = 'ui form'
