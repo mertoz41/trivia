@@ -3,43 +3,60 @@
     <head>    
         <meta charset="utf-8">
         <title>TRIVIA</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
         <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     </head>
     <body>
-        <header>
-        <h2>TRIVIA!</h2>
-    </header>
-    <div id="container">
-        <div id="all-pages">
-            <form id="login-form">
-                <input type="text" name="username" placeholder="Username">
-                <br>
-                <input type="text" name="password" placeholder="Password">
-                <br>
-                <input type="submit" value="Login">
-                <br>
-            </form>
-            <form id="forms" hidden>
-                <div id="category">
-                <label>Choose a category:</label>
-                <select id="category-select">
-                </select>
-                </div>
-                <div id="difficulty">
-                <label>Choose a difficulty:</label>
-                <select id="difficulty-select">
-                    <option value = 'easy'>Easy</option>
-                    <option value = 'medium'>Medium</option>
-                    <option value = 'hard'>Hard</option>
-                </select>
-                </div>
-                <button type = "submit" value = "Submit">Submit</button>
-            </form>
-            <div id="questions-container">
-                
 
+        <!-- navbar -->
+    <div class = 'heading'>
+        <div class= 'title'>
+        TRIVIA
+        </div>
+    </div>
+
+    <!-- container -->
+    <div class="ui one column stackable center aligned page grid">
+        <div class="column six wide">
+            <div class = 'container_buffer' id="container">
+                <div id="all-pages">
+                    <form class = 'ui form' id="login-form">
+                        <input type="text" name="username" placeholder="Username" class = 'field'>
+                        <br>
+                        <input type="text" name="password" placeholder="Password" class = 'field'>
+                        <br><br>
+                        <input type="submit" value="Login" class = 'ui black basic button'>
+                        <br>
+                     </form>
+
+                     <!-- category & difficulty form -->
+                    <form id="forms" hidden>
+                        <div id="category">
+                        <label >Choose a category:</label>
+                        <select class = 'ui fluid dropdown' id="category-select">
+                        </select>
+                        </div>
+                        <br>
+                        <div id="difficulty">
+                        <label>Choose a difficulty:</label>
+                        <select class = 'ui fluid dropdown'id="difficulty-select">
+                            <option value = 'easy'>Easy</option>
+                            <option value = 'medium'>Medium</option>
+                            <option value = 'hard'>Hard</option>
+                        </select>
+                        <br>
+                        </div>
+                        <button class = 'ui black basic button' type = "submit" value = "Submit">Submit</button>
+                    </form>
+
+                    <!-- questions form -->
+            <div id="questions-container">
+            
             </div>
         </div>
+    </div>
+    </div>
     </div>
         
         <script src="../src/index.js"></script>

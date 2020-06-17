@@ -62,33 +62,51 @@ function getQuestions(e){
 }
 
 function renderQuestions(question){
+
     let questContainer = document.getElementById('questions-container')
     let questDiv = document.createElement('div')
+    let tracker = document.createElement('p')
+    tracker.className = 'buffer_below'
+    tracker.innerText = `Question ${questionCounter + 1} of ${globalQuestions.length}`
     let oneQuestion = document.createElement('p')
+    oneQuestion.className = 'buffer_below'
     oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
-    questDiv.appendChild(oneQuestion)
+    questDiv.appendChild(tracker, oneQuestion)
     
     question.shuffle.forEach(choice => {
         let choiceButton = document.createElement('button')
+        let br = document.createElement('br')
+        choiceButton.className = 'ui toggle button'
         choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "`").replace(/&amp;/g, '&')
         choiceButton.value = choice.correct
         choiceButton.id = choice.id
-        questDiv.append(choiceButton)
+        questDiv.append(choiceButton, br)
         //would be listening for the boolean true or false 
         //passes to the submit function (if true, then) (if false)
         choiceButton.addEventListener('click', userChoice)
         
     })
+    let divSubPass = document.createElement('div')
+    divSubPass.className = 'ui buttons button_buffer'
+    let divOr = document.createElement('div')
+    divOr.className = 'or'
     let submitButton = document.createElement('button')
     submitButton.value = 'submit'
     submitButton.innerText = "Submit"
+    submitButton.className = 'ui positive button'
+    let br = document.createElement('br')
+    
+    
    
     let passButton = document.createElement('button')
     passButton.innerText = "Pass"
     passButton.value = 'pass'
+    passButton.className = 'ui button'
     passButton.addEventListener('click', handlePass)
 
-    questDiv.append(submitButton, passButton)
+    divSubPass.append(passButton, divOr, submitButton)
+
+    questDiv.append(br, divSubPass)
 
     questContainer.appendChild(questDiv)
     //if choice.correct == true
@@ -151,6 +169,7 @@ function handleSubmit(e) {
         text.innerText = `Your score is ${userPoints}`
         let returnButton = document.createElement('button')
         returnButton.innerText = 'Return to Start'
+        returnButton.className = 'ui black basic button'
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
             renderForms()
