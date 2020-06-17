@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
     def index
-        render json: User.all.to_json(
+        user = User.score
+        render json: user.to_json(
             :except => [:username, :password, :created_at, :updated_at]
         )
     end 
