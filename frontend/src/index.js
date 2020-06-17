@@ -125,7 +125,7 @@ function handleSubmit(e) {
     while(questContainer.firstElementChild) {
             questContainer.firstElementChild.remove()
         }
-       
+        currentChoice = 'unchosen'
         nextQuestion()
 
     }
@@ -153,6 +153,8 @@ function handleSubmit(e) {
         returnButton.innerText = 'Return to Start'
         returnButton.addEventListener('click', function () {
             endGameDiv.remove()
+            userPoints = 0
+            correctAnswers = 0
             renderForms()
         })
 
@@ -170,9 +172,11 @@ function handleSubmit(e) {
             questContainer.firstElementChild.remove()
         }
         
-        if(currentChoice != 'unchosen') {
+        if(currentChoice !== 'unchosen' ) {
            alert('Your answer won\'t count')
-         }
+         } 
+        currentChoice = 'unchosen'
+        
         nextQuestion()
     }
 
