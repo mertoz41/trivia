@@ -4,7 +4,14 @@ document.addEventListener('DOMContentLoaded', function(){
     let triviaLink = document.getElementById('trivia_title')
     let leaderBoardLink = document.querySelector("#leader_title")
     triviaLink.addEventListener('click', function() {
-        document.getElementById('leader-board').remove()
+        let div = document.getElementById('questions-container')
+        if (div.firstElementChild) {
+            div.firstElementChild.remove()
+        }
+        let leader = document.getElementById('leader-board')
+        if (leader){
+            leader.remove()
+        }
         renderForms()
          
    
@@ -18,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function(){
         let leaders = document.getElementById('leader-board')
         if(leaders) {
             leaders.remove()
+        }
+        let questions = document.querySelector("#questions-container")
+        if(questions) {
+            questions.remove()
         }
 
         leaderBoardOnly()})
