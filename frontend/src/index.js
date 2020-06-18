@@ -2,16 +2,25 @@ const category_url = 'http://localhost:3000/categories'
 const question_url = 'http://localhost:3000/questions'
 document.addEventListener('DOMContentLoaded', function(){
     let triviaLink = document.getElementById('trivia_title')
-    let leaderBoardLink = document.getElementById('leader_title')
+    let leaderBoardLink = document.querySelector("#leader_title")
     triviaLink.addEventListener('click', function() {
-        document.querySelector("#questions-container").firstElementChild.remove()
+        document.getElementById('leader-board').remove()
+        renderForms()
+         
+   
+        
         userPoints = 0
         correctAnswers = 0
         wrongQuestions = []
-        renderForms()
     })
 
-    leaderBoardLink.addEventListener('click', renderLeaderBoard)
+    leaderBoardLink.addEventListener('click', function(){
+        let leaders = document.getElementById('leader-board')
+        if(leaders) {
+            leaders.remove()
+        }
+
+        leaderBoardOnly()})
     fetchCategories()
 
 })
@@ -81,7 +90,7 @@ function renderQuestions(question){
     let startQ = questionCounter + 1
     let lengthQ = globalQuestions.length
     tracker.innerText = `Question ${startQ} out of ${lengthQ}`
-    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&')
+    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&').replace(/&rsquo;/g,"'")
     oneQuestion.className = 'questions_font buffer_below_question'
     questDiv.append(tracker, oneQuestion)
     
@@ -258,6 +267,7 @@ function handleSubmit(e) {
     function renderLeaderBoard(){
         let userDiv = document.getElementById('user-score')
         let board = document.createElement('div')
+        board.id = 'leader-board'
         let statement = document.createElement('p')
         statement.innerText = "Leaderboard:"
         statement.className = 'questions_font leader_top_buffer'
@@ -308,7 +318,8 @@ function handleSubmit(e) {
         while(user_score.firstElementChild){
             user_score.firstElementChild.remove()
         }
-        renderLeaderBoard()
+        // renderLeaderBoard()
+        // leaderBoardOnly()
     }
 
     
@@ -328,6 +339,37 @@ function handleSubmit(e) {
         currentChoice = 'unchosen'
         
         nextQuestion()
+    }
+
+    function leaderBoardOnly(){
+        let forms = document.getElementById('forms')
+        forms.hidden = true
+        let allPages = document.getElementById('all-pages')
+    
+    
+        let board = document.createElement('div')
+        board.id = 'leader-board'
+        let statement = document.createElement('p')
+        statement.innerText = "Leaderboard:"
+        statement.className = 'questions_font leader_top_buffer'
+        let divList = document.createElement('div')
+        divList.className = 'ui ordered divided list'
+        fetch('http://localhost:3000/users')
+        .then(resp => resp.json())
+        .then(data => {
+            data.forEach(user => {
+                let item = document.createElement('div')
+                item.className = 'item left'
+                item.innerText = `${user.name}:  ${user.high_score} points`
+                divList.appendChild(item)
+
+            })
+
+        })
+        board.append(statement, divList)
+
+        allPages.appendChild(board)
+    
     }
 
     
