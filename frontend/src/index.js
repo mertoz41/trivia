@@ -5,30 +5,40 @@ document.addEventListener('DOMContentLoaded', function(){
     let leaderBoardLink = document.querySelector("#leader_title")
     triviaLink.addEventListener('click', function() {
         let div = document.getElementById('questions-container')
-        if (div.firstElementChild) {
+        if (div.firstElementChild){
             div.firstElementChild.remove()
+        }
+        if (div.hidden = true) {
+            div.hidden = false 
         }
         let leader = document.getElementById('leader-board')
         if (leader){
             leader.remove()
         }
-        renderForms()
-         
-   
+        // if (div) {
+        //     div.hidden = true 
+        // }
+        
+        
         
         userPoints = 0
         correctAnswers = 0
         wrongQuestions = []
+        renderForms()
     })
 
     leaderBoardLink.addEventListener('click', function(){
+        let score = document.querySelector("#user-score")
+        if (score) {
+            score.remove()
+        }
         let leaders = document.getElementById('leader-board')
         if(leaders) {
             leaders.remove()
         }
         let questions = document.querySelector("#questions-container")
         if(questions) {
-            questions.remove()
+            questions.hidden = true 
         }
 
         leaderBoardOnly()})
