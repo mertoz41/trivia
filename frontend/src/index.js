@@ -111,7 +111,7 @@ function renderQuestions(question){
     let startQ = questionCounter + 1
     let lengthQ = globalQuestions.length
     tracker.innerText = `Question ${startQ} out of ${lengthQ}`
-    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&').replace(/&rsquo;/g,"'")
+    oneQuestion.innerText = question.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&').replace(/&rsquo;/g,"'").replace(/&iacute;/g, 'í').replace(/&oacute;/g, 'ó')
     oneQuestion.className = 'questions_font buffer_below_question'
     questDiv.append(tracker, oneQuestion)
     
@@ -119,7 +119,7 @@ function renderQuestions(question){
         let choiceButton = document.createElement('button')
         let br = document.createElement('br')
         choiceButton.className = 'ui toggle button'
-        choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&')
+        choiceButton.innerText = choice.text.replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&amp;/g, '&').replace(/&iacute;/g, 'í').replace(/&oacute;/g, 'ó')
         choiceButton.value = choice.correct
         choiceButton.id = "choice-button"
         questDiv.append(choiceButton, br)
