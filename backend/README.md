@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A trivia game where users can choose from 13 categories and compete for a position on the leaderboard
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To play: 
+1) cd into frontend/src, from the commandline run 'open index.html'
+2) cd into backend, from the command line run 'rails s'
